@@ -1,23 +1,38 @@
-# OS Project 4
+# adzip - Archive and Extract Utility in C
 
 ### Authors: Avani Tiwari, Himanshi Lalwani
 
-Invoking the program:
-- make
-- ./adzip {-c|-a|-x|-m|-p} <archive-file> <file/directorylist> 	
+### Overview
+The adzip utility is a powerful C program designed to provide archiving and extraction capabilities for files and directories. Users can conveniently invoke this program through the command line interface. Here's a concise guide on using adzip.
 
-Note that <file/directorylist> is a comma separated string of files and directories to be zipped.
+### Invocation
+To utilize the adzip program, follow these steps:
+1. Open a terminal and navigate to the src folder within project directory using the cd command.
+2. Compile the program using `make`.
+3. Execute the program with one of the following options and a comma-separated list of files and directories: `./adzip {-c|-a|-x|-m|-p} <archive-file> <file/directorylist>`.
 
-Example Usage:
-- make
-- ./adzip {-c|-a|-x|-m|-p} adzip.ad text.txt,testDir,test.png
+### Example Usage
+As an illustration, consider the following usage scenario:<br>
+`make`<br>
+`./adzip {-c|-a|-x|-m|-p} adzip.ad text.txt,testDir,test.png`
 
-Overview:
+### Features
 The users can call the adzip program to archive files and directories which can be provided as a comma separated list in the <archive-file> provided. 
-For extracting, printing the hierarchy, and printing the metadata we just need the <archive-file> 			
+For extracting, printing the hierarchy, and printing the metadata we just need the <archive-file> arg.
 
-- -c store in the archive file <archive-file> (appropriately designated with postfix.ad), all files and/or directories provided by the list <file/directory-list>. If other files/directories exist within in <directory-list>, then all this content is recursively stored in the archive-file.	
-- -a append filesystem entities (files and directories) indicated in the <file/directory list> in the archived file <archive-file> that already exists. If additional files and directories exist in <file/directory list>, they are also recursively appended along with their content in the designated archive-file.
-- -x extract all files and catalogs that have been archived in file <archive-file> by accurately recreating the original hierarchy in the current working directory. The folder in which the contents are extracted is called extract.
-- -m print out the meta-data (owner, group, rights) for all files/directories that have been archived in archive-file.			
-- -p display the hierarchy(-ies) of the files and directories stored in the archive-file.
+The adzip program encompasses several key functionalities:
+- `-c`: Store Operation
+  - Archive the specified files and directories into an archive file, appropriately designated with the '.ad' postfix.
+  - Recursively include all content within the provided directories.   
+- `-a`: Append Operation
+  - Append filesystem entities indicated in the <file/directory list> to an existing archive file.
+  - Additional files and directories existing within the <directory-list> are also recursively appended to the designated archive file.
+- `-x`: Extract Operation
+  - Extract all archived files and directories from the archive file, meticulously recreating the original hierarchy.
+  - Extraction is done in the 'extract' folder within the current working directory.
+- `-m`: Metadata Printing
+  - Display the meta-data (owner, group, rights) for all files/directories archived in the designated archive file. 
+- `-p`: Hierarchy Display
+  - Print the hierarchies of files and directories stored within the archive file.
+
+In summary, the adzip utility serves as a versatile tool for archiving and extracting files and directories, enhancing your file management capabilities with efficiency and ease.
